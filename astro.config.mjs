@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import vercel from "@astrojs/vercel/serverless";
+import cloudflare from "@astrojs/cloudflare";
 import tailwind from "@astrojs/tailwind";
 import solidJs from "@astrojs/solid-js";
 
@@ -7,6 +7,6 @@ import solidJs from "@astrojs/solid-js";
 export default defineConfig({
   site: "https://astro-supabase-auth.vercel.app",
   output: "server",
-  adapter: vercel(),
+  adapter: cloudflare(),
   integrations: [tailwind(), solidJs()],
 });
