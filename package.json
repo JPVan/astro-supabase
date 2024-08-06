@@ -7,15 +7,16 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "preview-deno": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
     "preview-cloudflare": "wrangler pages dev ./dist",
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "astro": "astro",
     "check-peer": "pnpm install --resolution-only"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^11.0.4",
     "@astrojs/solid-js": "^3.0.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@deno/astro-adapter": "^0.1.3",
     "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "@supabase/supabase-js": "^2.45.0",

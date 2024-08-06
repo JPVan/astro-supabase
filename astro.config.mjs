@@ -1,5 +1,5 @@
 import { defineConfig } from "astro/config";
-import cloudflare from "@astrojs/cloudflare";
+import deno from "@deno/astro-adapter";
 import tailwind from "@astrojs/tailwind";
 import solidJs from "@astrojs/solid-js";
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
@@ -9,7 +9,7 @@ import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfil
 export default defineConfig({
   site: "https://idle.parfait.cloud",
   output: "hybrid",
-  adapter: cloudflare(),
+  adapter: deno(),
   integrations: [tailwind(), solidJs()],
 
   vite: {
