@@ -8,7 +8,7 @@ import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfil
 // https://astro.build/config
 export default defineConfig({
   site: "https://idle.parfait.cloud",
-  output: "hybrid",
+  output: "server",
   adapter: deno(),
   integrations: [tailwind(), solidJs()],
 
