@@ -17,6 +17,12 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.local
+.env*.local
+
+
+#Local Firebase config.
+config.js
 
 # macOS-specific files
 .DS_Store

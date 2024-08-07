@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
-import cloudflare from "@astrojs/cloudflare";
+import svelte from "@astrojs/svelte";
 import tailwind from "@astrojs/tailwind";
+import cloudflare from "@astrojs/cloudflare";
 import solidJs from "@astrojs/solid-js";
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
@@ -10,7 +11,7 @@ export default defineConfig({
   site: "https://idle.parfait.cloud",
   output: "hybrid",
   adapter: cloudflare(),
-  integrations: [tailwind(), solidJs()],
+  integrations: [svelte(), tailwind(), solidJs()],
 
   vite: {
     optimizeDeps: {
@@ -32,7 +33,7 @@ export default defineConfig({
       }
     },
     ssr: {
-      noExternal: ['picomatch', 'micromatch']
+      noExternal: ['picomatch', 'micromatch', 'svelte', 'svelte/internal']
     }
   },
 });

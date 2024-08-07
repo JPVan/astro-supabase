@@ -1,0 +1,45 @@
+---
+import Footer from "../components/Footer.svelte";
+import SiteTitle from "../components/SiteTitle.svelte";
+const {
+    frontmatter = {
+        title: "frontmatter title didn't work",
+        file: "frontmatter file didn't work",
+        url: "frontmatter url didn't work",
+    },
+    compiledContent = () => "",
+} = Astro.props;
+export const prerender = true;
+---
+
+<html>
+    <head>
+        <title>{frontmatter.title}</title>
+        <script></script>
+    </head>
+    <body class="main">
+        <div class="header">
+            <div style="width: 75%; max-width: 24em; margin: 0 auto;">
+                <a href="/">
+                    <SiteTitle />
+                </a>
+            </div>
+        </div>
+        <Footer />
+        <div class="prose max-w-none">
+            <Fragment set:html={compiledContent()} />
+        </div>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    html {
+        background-image: url("../svg/background.svg");
+    }
+    .main {
+        width: 75%; /* use this percent of the viewport width */
+        max-width: 48em; /* but no more than this many pixels */
+        margin: 0 auto; /* center in viewport */
+    }
+</style>
