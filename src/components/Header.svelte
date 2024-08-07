@@ -10,6 +10,11 @@
     <div style="width: 75%; max-width: 24em; margin: 0 auto;">
         <SiteTitle />
 
+        <a href="/signin" class="block text-zinc-900 dark:text-gray-200">
+            Sign in
+        </a>
+
+
         <p class="text-white mt-4vw font-semibold pb-5">
             <span class="small-text-gradient">
                 Funds: ${formatNumberWithScale(funds)}
