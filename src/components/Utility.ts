@@ -80,7 +80,11 @@ export function costOfQuantity(quantity: number, currentPrice: number, costMulti
     // return calculateTotalCost(currentPrice, quantity);
 }
 
-
+export function isPathMatch(pathname: string, routes: string[]): boolean {
+    return routes.some(route => pathname === route || pathname.startsWith(route));
+  }
+  
+  
 // OTHER COST CALCULATION FUNCTIONS
 
 // function growthLinear(value: number, increment: number): number {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { costOfQuantity } from './Utility';
+import { costOfQuantity, isPathMatch } from './Utility';
 
 describe('costOfQuantity', () => {
     it('should calculate the correct total cost for quantity 3, currentPrice 1, and multiplier 2', () => {
@@ -30,3 +30,30 @@ describe('costOfQuantity', () => {
         expect(result).toBeCloseTo(expected, 5); // Allowing a small tolerance for floating-point arithmetic
     });
 });
+
+describe('isPathMatch', () => {
+    it('should match exact paths', () => {
+      expect(isPathMatch('/dashboard', ['/dashboard'])).toBe(true);
+      expect(isPathMatch('/signin', ['/signin', '/register'])).toBe(true);
+    });
+  
+    it('should match paths with trailing slashes', () => {
+      expect(isPathMatch('/dashboard/', ['/dashboard'])).toBe(true);
+      expect(isPathMatch('/signin/', ['/signin', '/register'])).toBe(true);
+    });
+  
+    it('should match paths starting with the given routes', () => {
+      expect(isPathMatch('/dashboard/settings', ['/dashboard'])).toBe(true);
+      expect(isPathMatch('/signin/oauth', ['/signin', '/register'])).toBe(true);
+    });
+  
+    it('should not match unrelated paths', () => {
+      expect(isPathMatch('/home', ['/dashboard'])).toBe(false);
+      expect(isPathMatch('/login', ['/signin', '/register'])).toBe(false);
+    });
+  
+    it('should handle empty routes array', () => {
+      expect(isPathMatch('/any-path', [])).toBe(false);
+    });
+  });
+  

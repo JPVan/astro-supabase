@@ -10,6 +10,8 @@
     "preview-cloudflare": "wrangler pages dev ./dist",
     "format": "prettier --write . --plugin=prettier-plugin-astro",
     "astro": "astro",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
     "check-peer": "pnpm install --resolution-only"
   },
   "dependencies": {
@@ -32,6 +34,8 @@
   },
   "devDependencies": {
     "@types/micromatch": "^4.0.9",
+    "vite": "^5.3.5",
+    "vitest": "^2.0.5",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.12.3"
   }
