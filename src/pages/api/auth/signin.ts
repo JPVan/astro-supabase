@@ -14,7 +14,7 @@ export const POST: APIRoute = async ({ request, cookies, redirect }) => {
       options: {
         redirectTo: import.meta.env.DEV
           ? "http://localhost:4321/api/auth/callback"
-          : "https://idle.parfait.cloud/api/auth/callback",
+          : "https://c65351eb.astro-supabase-7t2.pages.dev/api/auth/callback",
       },
     });
 
