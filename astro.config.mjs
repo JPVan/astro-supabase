@@ -5,7 +5,7 @@ import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-supabase-auth.vercel.app",
+  site: "https://astro-supabase.pages.dev",
   output: "server",
   adapter: cloudflare(),
   integrations: [tailwind(), solidJs()],

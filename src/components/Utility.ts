@@ -80,10 +80,17 @@ export function costOfQuantity(quantity: number, currentPrice: number, costMulti
     // return calculateTotalCost(currentPrice, quantity);
 }
 
+// Regex version of checking routes 
+// function isPathMatch(pathname: string, patterns: string[]): boolean {
+//     return patterns.some(pattern => {
+//       const regex = new RegExp(`^${pattern.replace(/\//g, '\\/').replace(/\*/g, '.*')}$`);
+//       return regex.test(pathname);
+//     });
+// }
 export function isPathMatch(pathname: string, routes: string[]): boolean {
     return routes.some(route => pathname === route || pathname.startsWith(route));
-  }
-  
+}
+
   
 // OTHER COST CALCULATION FUNCTIONS
 
